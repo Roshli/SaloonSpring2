@@ -5,9 +5,6 @@
  */
 package com.mycompany.mavenprojectfinal2;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -20,7 +17,6 @@ import org.springframework.stereotype.Service;
 public class ManageSaloon {
     
     Customer customer4 = new Customer();
-    List<Customer> customer5 = new ArrayList<Customer>();
     CustomerDao customer2 = new CustomerDaoImpl();
     
     
@@ -30,17 +26,7 @@ public class ManageSaloon {
     {
         customer2.insertCustomer(customer);
     }
-    public Customer viewCustomer(int tpNo)
-    {
-      customer4 = customer2.getCustomer(tpNo);
 
-        return customer4;
-    }
-    public List<Customer> viewCustomers()
-    {
-        customer5 = customer2.getCustomers();
-        return customer5;
-    }
     public void connectionClose()
     {
         customer2.closeConnection();

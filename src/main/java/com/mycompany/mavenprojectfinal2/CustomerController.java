@@ -8,55 +8,37 @@ package com.mycompany.mavenprojectfinal2;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.cache.CacheManagerCustomizer;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.mycompany.mavenprojectfinal2.Customer;
+import com.mycompany.mavenprojectfinal2.CustomerRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 /**
  *
  * @author Roshli
  */
+@Controller
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
+    
     @Autowired
     private ManageSaloon customerManage;
-    
-    List<Customer> customer4 = new ArrayList<Customer>();
-    Customer customerUpde = new Customer();
-    
-    @RequestMapping(value = "/{tpNo}", method = RequestMethod.GET)
-   // @CrossOrigin(origins = "http://localhost:4200", allowedHeaders="*")
-    public List<Customer> viewCustomer(@PathVariable("tpNo") int tpNo)
-    {
-        customer4.clear();
-      customer4.add(customerManage.viewCustomer(tpNo));
 
-        return customer4;
-    }
+    @Autowired
+    private CustomerRepository customerRepository;
     
-    @RequestMapping(value = "/Customers", method = RequestMethod.GET)
-   // @CrossOrigin(origins = "http://localhost:4200", allowedHeaders="*")
-    public List<Customer> viewCustomers()
-    {
-        //customer4.clear();
-      customer4 = customerManage.viewCustomers();
-
-        return customer4;
-    }
+    	@GetMapping(path="/all")
+	public Page<Customer> showPage(@RequestParam(defaultValue = "0")int page) {
+		// This returns a JSON or XML with the users
+		return customerRepository.findAll(new PageRequest(page, 4));
+	}
     
-    
-//    @RequestMapping(value = "cus/{tpNo2}", method = RequestMethod.GET)
-//    // @CrossOrigin(origins = "http://localhost:4200", allowedHeaders="*")
-//    public Customer mapCustomer(@PathVariable("tpNo2") int tpNo2)
-//    {
-//        customerUpde = customerManage.viewCustomer(tpNo2);
-//
-//        return customerUpde;
-//    }
     
     
     @RequestMapping(method = RequestMethod.PUT)
@@ -66,7 +48,6 @@ public class CustomerController {
     }
     
 
-   @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType. APPLICATION_JSON_VALUE)
     public void insertCustomer(@RequestBody Customer customer)
     {

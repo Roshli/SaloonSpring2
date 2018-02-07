@@ -17,10 +17,8 @@ import java.util.List;
 //@Repository
 public interface CustomerDao {
    
-    public Customer getCustomer(int tpNo);
     public void insertCustomer (Customer c);
     public void closeConnection();
-    public List<Customer> getCustomers();
     public void updateCustomer (Customer c);
     
 }

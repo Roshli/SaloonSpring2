@@ -8,6 +8,7 @@ package com.mycompany.mavenprojectfinal2;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -18,27 +19,35 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
         @Id
-        private int tpNumber;
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private Integer tpnumber;
+        
         private String name;
-        private int age;
+        
+        private Integer age;
+        
         private String address;
+        
         private String email;
 
-        public Customer(int mTpNumber, String mName, int mAge, String mAddress, String mEmail)
+        public Customer( int tpnumber, String name, int age, String address, String email)
         {
-            this.tpNumber = mTpNumber;
-            this.name = mName;
-            this.age = mAge;
-            this.address = mAddress;
-            this.email = mEmail;
+            this.tpnumber = tpnumber;
+            this.name = name;
+            this.age = age;
+            this.address = address;
+            this.email = email;
 
         }
+ 
+        
         public Customer()
         {}
+        
 
         public int getTpNumber()
         {
-            return tpNumber;
+            return tpnumber;
         }
         public String getName()
         {
@@ -59,7 +68,7 @@ public class Customer {
 
         public void setTpNumber(int tpNo)
         {
-            tpNumber = tpNo;
+            tpnumber = tpNo;
         }
         public void setName(String sname)
         {

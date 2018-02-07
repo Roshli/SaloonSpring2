@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dceb704-0710-49db-8a7b-3cdff4f9c479" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mycompany/mavenprojectfinal2/CustomerRepository.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/SaloonInterface" afterPath="$PROJECT_DIR$/src/main/SaloonInterface" />
     </list>
@@ -481,7 +480,7 @@
       <workItem from="1517581425866" duration="2143000" />
       <workItem from="1517828813119" duration="4057000" />
       <workItem from="1517890582796" duration="4536000" />
-      <workItem from="1517999808059" duration="8909000" />
+      <workItem from="1517999808059" duration="8997000" />
     </task>
     <task id="LOCAL-00001" summary="saloon">
       <created>1515985666337</created>
@@ -511,11 +510,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518012091245</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="saloon">
+      <created>1518012516170</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1518012516170</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278109000" />
+    <option name="totallyTimeSpent" value="278197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
